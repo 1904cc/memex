@@ -1,0 +1,43 @@
+/* @override 
+	http://kontinuum:8888/app/themes/memex/style-memex.css?* */
+
+/* Layout for wider screens */
+
+@media screen and (min-width: 37.5em) {
+	
+	.single .entry-header {
+		font-size: 120%;
+	}
+	.single .entry-content {
+		width: 50%;
+		float: right;
+	}
+	
+	.single .entry-header,
+	.single .entry-footer {
+		width: 50%;
+		float: left;
+		clear: left;
+		text-align: right;
+		padding-right: 2em;
+	}
+	
+	.post-navigation {
+		clear: both;
+	}
+	
+	/* split title and content */
+}
+
+@media screen and (min-width: 50em) { 
+
+	.single .entry-header,
+	.single .entry-footer {
+		width: 40%;
+	}
+	.single .entry-content {
+		width: 60%;
+		padding-right: 10%;
+	}
+
+}
