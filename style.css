@@ -44,6 +44,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+
+/* @group Normalize */
+
 /*--------------------------------------------------------------
 Normalize
 --------------------------------------------------------------*/
@@ -258,6 +261,10 @@ th {
 	padding: 0;
 }
 
+/* @end */
+
+/* @group Typography */
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -326,9 +333,10 @@ big {
 	font-size: 125%;
 }
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
+/* @end */
+
+/* @group Elements */
+
 html {
 	box-sizing: border-box;
 }
@@ -345,7 +353,7 @@ html, body {
 }
 
 body {
-	padding: 2em;
+	padding: 2em 0;
 }
 
 hr {
@@ -397,6 +405,10 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+/* @end */
+
+/* @group Forms */
 
 /*--------------------------------------------------------------
 # Forms
@@ -482,9 +494,14 @@ textarea {
 	width: 100%;
 }
 
+/* @end */
+
+/* @group Navigation */
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -561,7 +578,7 @@ a:hover, a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	border: 1px solid #333;
+	border: 0px solid #333;
 	padding: 1em;
 }
 
@@ -588,8 +605,14 @@ a:hover, a:active {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		
-		background: pink;
+	}
+	
+	.main-navigation li {
+		background: linear-gradient( 90deg, #999, #ddd );
+		min-height: 20vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	.main-navigation .menu-item {
 /*		padding: 0.5em 2em;*/
@@ -623,6 +646,8 @@ a:hover, a:active {
 	clear: left;
 /*	width: 50%;*/
 }
+
+/* @end */
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -731,6 +756,8 @@ a:hover, a:active {
 	max-width: 100%;
 }
 
+/* @group Content */
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -747,6 +774,12 @@ a:hover, a:active {
 
 .updated:not(.published) {
 	display: none;
+}
+
+.content {
+	/*
+	 * Define CSS Grid
+	*/
 }
 
 .page-content,
@@ -775,6 +808,8 @@ a:hover, a:active {
 .bypostauthor {
 	display: block;
 }
+
+/* @end */
 
 /*--------------------------------------------------------------
 # Infinite scroll

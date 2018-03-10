@@ -22,6 +22,12 @@
 		padding-right: 2em;
 	}
 	
+	.single .entry-content,
+	.single .entry-footer {
+			margin-bottom: 2em;
+	}
+	    
+	
 	.post-navigation {
 		clear: both;
 	}
