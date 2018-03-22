@@ -335,6 +335,15 @@ big {
 
 /* @end */
 
+/* @group General Layout */
+
+.site-header,
+.site-content {
+	padding: 0 2em;
+}
+
+/* @end */
+
 /* @group Elements */
 
 html {
@@ -506,11 +515,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #214dcf;
 }
 
 a:visited {
-	color: purple;
+	color: #214dcf;
 }
 
 a:hover, a:focus, a:active {
@@ -652,6 +661,18 @@ a:hover, a:active {
 		flex-direction: column;
 		justify-content: center;
 	}
+	
+	
+	
+	/*
+	Define min-height for content.
+	Header is: 2em (top padding) + 4em = 6em
+	
+	*/
+	.site-content {
+		min-height: calc(80vh - 6em);
+	}
+	
 	.main-navigation .menu-item {
 /*		padding: 0.5em 2em;*/
 		flex-grow: 1;
