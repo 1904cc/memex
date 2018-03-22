@@ -583,6 +583,12 @@ a:hover, a:active {
 }
 
 /* Small menu. */
+
+.menu-toggle {
+	margin-left: 2em;
+	margin-bottom: 2em;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -591,6 +597,38 @@ a:hover, a:active {
 .main-navigation.toggled ul {
 	display: flex;
 	flex-direction: column;
+}
+
+/* Navigation colors. */
+
+.main-navigation li a {
+	color: #666;
+	letter-spacing: 0.1em;
+}
+
+.main-navigation li:nth-of-type(5n+1) {
+	background: #6fc39e;
+}
+.main-navigation li:nth-of-type(5n+2) {
+	background: #63dbaf;
+}
+.main-navigation li:nth-of-type(5n+3) {
+	background: #a0d3a7;
+}
+.main-navigation li:nth-of-type(5n+4) {
+	background: #a6eec2;
+}
+.main-navigation li:nth-of-type(5n+5) {
+	background: #c6f9c2;
+}
+
+.main-navigation li:hover {
+	opacity: 0.8;
+	background: #4f9a79;
+}
+
+.main-navigation li:hover a {
+	color: #fff;
 }
 
 /* 600px -> Switch to Desktop Menu */
@@ -605,10 +643,10 @@ a:hover, a:active {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		background: #999;
 	}
 	
 	.main-navigation li {
-		background: linear-gradient( 90deg, #999, #ddd );
 		min-height: 20vh;
 		display: flex;
 		flex-direction: column;
