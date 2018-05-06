@@ -116,13 +116,9 @@ add_action( 'widgets_init', 'memex_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function memex_scripts() {
+function memex_styles_and_scripts() {
 
-	wp_enqueue_style( 'memex-base', get_template_directory_uri().'/style.css' );
-	
-	wp_enqueue_style( 
-		'memex-custom', get_template_directory_uri().'/style-memex.css' 
-	);
+	wp_enqueue_style( 'memex-base', get_template_directory_uri().'/assets/build/stylesheets/style.css' );
 	
 	// wp_enqueue_style( 'breite-grotesk', get_template_directory_uri().'/fonts/breite-grotesk/webfont.css' );
 	
@@ -139,7 +135,7 @@ function memex_scripts() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'memex_scripts' );
+add_action( 'wp_enqueue_scripts', 'memex_styles_and_scripts' );
 
 /**
  * Implement the Custom Header feature.

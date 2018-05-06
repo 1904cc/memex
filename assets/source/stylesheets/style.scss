@@ -1,0 +1,70 @@
+/*
+ * Information
+ *
+ * Standards for developing flexible, durable, and sustainable HTML and CSS.
+ * http://codeguide.co/
+ 
+ * On the organization of SASS files in Underscores, read:
+ * https://github.com/Automattic/_s/issues/1215
+
+ * Current structure in _S:
+ * https://github.com/Automattic/_s/blob/master/sass/style.scss
+
+ */
+
+/* =Include
+===================================================== */
+
+/*
+--------------------------------------------------------------
+  Configuration Variables
+----------------------------------------------------------------
+*/
+
+@import "config.variables";
+
+/*--------------------------------------------------------------
+# Base Styles
+--------------------------------------------------------------*/
+
+@import "base.normalize";
+
+@import "base.typography";
+@import "base.elements";
+@import "base.forms";
+
+@import "base.extras";
+
+// # Accessibility
+// # Alignments
+// # Clearings
+// # Widgets
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+@import "content.navigation";
+@import "content.layout";
+@import "content.posts";
+
+//   ## Posts and pages
+//   ## Comments
+
+@import "content.media";
+
+// # Media
+//   ## Captions
+//   ## Galleries
+
+/*--------------------------------------------------------------
+# Modules
+--------------------------------------------------------------*/
+
+// # Infinite scroll
+
+@import "modules.infinite-scroll";
+
+
+/* --------------------------------------------------------------*/
+
