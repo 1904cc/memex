@@ -19,9 +19,17 @@ gulp.task('stylesheets', function() {
     .pipe(sourcemaps.write()) // Writing sourcemaps
     .pipe(cssnano()) // Compress
     .pipe(gulp.dest('assets/build/stylesheets'))
-})
+});
 
 
 
 // Start build task
-gulp.task('build', ['stylesheets'], function() {})
+gulp.task('build', ['stylesheets'], function() {});
+
+// Start watch groups of tasks
+gulp.task('default', ['stylesheets'], function() {
+  gulp.watch('assets/source/stylesheets/*.scss', ['stylesheets']); // Watch for SCSS changes
+  // gulp.watch('source/assets/scripts/**/*.js', ['scripts']); // Watch for JS changes
+  // gulp.watch('build/**.html', browserSync.reload);
+  // gulp.watch('styleguide/**.html', browserSync.reload);
+});

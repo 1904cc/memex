@@ -38,7 +38,7 @@ address {
 
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-family: $font__pre;
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
@@ -49,7 +49,7 @@ pre {
 }
 
 code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: $font__code;
   font-size: 15px;
   font-size: 0.9375rem;
 }
@@ -67,5 +67,25 @@ mark, ins {
 big {
   font-size: 125%;
 }
+
+/*--------------------------------------------------------------
+# Body Font
+--------------------------------------------------------------*/
+
+body {
+  font-family: 'aileron', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Headings Font
+--------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6,
+.navigation,
+.main-navigation {
+  font-family: 'PropCourierSans', sans-serif;
+  font-weight: bold;
+}
+
 
 /* @end */
