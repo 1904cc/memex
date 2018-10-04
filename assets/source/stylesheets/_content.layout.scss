@@ -17,7 +17,7 @@
   
   */
   .site-content {
-    min-height: calc(80vh - 6em);
+    min-height: calc(80vh);
   }
 
 }
@@ -27,8 +27,22 @@
 /* Header */
 
 .site-title-link {
-  border: 1px solid #333;
+	width: 2em;
+	height: 2em;
+	position: fixed;
 }
+
+.site-title-link a {
+	display: block;
+	width: 1em;
+	height: 1em;
+	background: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 2em;
+}
+
+
 
 /* Layout for wider screens */
 
