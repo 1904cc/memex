@@ -77,15 +77,17 @@ table {
 --------------------------------------------------------------*/
 
 a {
-  color: #214dcf;
+  color: $color__link;
 }
 
 a:visited {
-  color: #214dcf;
+  color: $color__link-visited;
 }
 
-a:hover, a:focus, a:active {
-  color: midnightblue;
+a:hover, 
+a:focus, 
+a:active {
+  color: $color__link-hover;
 }
 
 a:focus {

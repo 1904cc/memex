@@ -66,16 +66,25 @@
 
 /* Navigation colors. */
 
+.main-navigation li {
+  background: $color__primary;
+}
+
 .main-navigation li a {
-  color: #666;
+  color: #ddd;
   letter-spacing: 0.1em;
   text-align: left;
 }
 
-.main-navigation li:nth-of-type(5n+1) {
-  background: #6fc39e;
+.main-navigation li:nth-of-type(2n+1) {
+  background: $color__contrast;
 }
-.main-navigation li:nth-of-type(5n+2) {
+
+.main-navigation li:nth-of-type(2n+1) a {
+	color: #000;
+}s
+
+/*.main-navigation li:nth-of-type(5n+2) {
   background: #63dbaf;
 }
 .main-navigation li:nth-of-type(5n+3) {
@@ -86,7 +95,7 @@
 }
 .main-navigation li:nth-of-type(5n+5) {
   background: #c6f9c2;
-}
+}*/
 
 .main-navigation li:hover {
 /*  opacity: 0.8;*/

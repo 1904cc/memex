@@ -15,14 +15,16 @@ $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
-$color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
+$color__primary: #7165C0; /* Violet */
+$color__contrast: #35E1C7; /* Green */
+
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
+
+
+$color__link: #7165C0;
+$color__link-visited: #7165C0;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
@@ -78,3 +80,4 @@ $small-value:                   37.5em; // 600px
 $medium-value:                  48em; // 768px
 $large-value:                   62em; // 992px
 $extra-large-value:             80em; // 1280px
+
