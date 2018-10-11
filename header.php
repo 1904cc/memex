@@ -32,7 +32,7 @@
 		
 		?>
 		<header id="masthead" class="site-header">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 		</header><!-- #masthead -->
 		<?php
 	
@@ -41,7 +41,17 @@
 	// Show only some navigation back to front page.
 	
 	?>
-	<nav class="site-title site-title-link"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">x</a></nav>
+	<nav class="site-title site-title-link h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <title>Close</title>
+	    <desc>Close icon.</desc>
+	    <defs></defs>
+	    <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+	        <g id="Group" transform="translate(6.000000, 6.000000)" stroke="#000000" stroke-width="2">
+	            <path d="M0.5,0.5 L19.0607112,19.0607112" id="Line"></path>
+	            <path d="M0,19.5607112 L18.5607112,1" id="Line-Copy"></path>
+	        </g>
+	    </g>
+	</svg></a></nav>
 	<?php
 	
 	}

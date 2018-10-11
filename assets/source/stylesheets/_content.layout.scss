@@ -9,8 +9,13 @@
   padding: 0 2em;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $small-value) {
   
+	.site-header,
+	.site-content {
+	  padding: 0 4em;
+	}
+	
   /*
   Define min-height for content.
   Header is: 2em (top padding) + 4em = 6em
@@ -24,36 +29,68 @@
 
 
 
+
 /* Header */
 
 .site-title-link {
 	width: 2em;
 	height: 2em;
+	margin: 0;
 	position: fixed;
 }
 
 .site-title-link a {
 	display: block;
-	width: 1em;
-	height: 1em;
-	background: #fff;
+	width: 1.67em;
+	height: 1.67em;
+	padding: 0.2em;
+/*	background: #fff;*/
 	text-align: center;
 	text-decoration: none;
-	font-size: 2em;
 }
 
+.site-title-link a svg {
+/*	width: 100%;
+	height: 100%;*/
+}
 
+.site-title-link a svg path {
+	stroke: #404040;
+}
+
+.site-title-link a:hover svg path {
+	stroke: #fff;
+}
+
+.page-title, 
+.single .entry-title {
+/*	background-color: #fff;*/
+	margin-top: 0;
+	margin-left: 1em;
+}
+
+.date {
+	margin-bottom: 1em;
+}
+
+@media screen and (min-width: $small-value) {
+	.page-title {
+		margin-left: 0;
+	}
+}
 
 /* Layout for wider screens */
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $small-value) {
   
+	.page-header,
   .single .entry-header {
     font-size: 120%;
   }
   .single .entry-content {
     width: 50%;
     float: right;
+		margin-top: 4.2em;
   }
   
   .single .entry-header,
@@ -64,18 +101,43 @@
     text-align: right;
     padding-right: 2em;
   }
+	
+	.single .entry-footer p:first-of-type {
+		margin-top: 0;
+	}
   
   .single .entry-content,
   .single .entry-footer {
       margin-bottom: 2em;
   }
       
-  
   .post-navigation {
     clear: both;
   }
   
-  /* split title and content */
+}
+
+@media screen and (min-width: $medium-value) {
+
+	.site-title-link a {
+		padding: 0.8em;
+		margin-top: 0.3em;
+	}
+	
+	.page-title,
+	.single .entry-title {
+		margin-top: 0.6em;
+	}
+	
+	.single .entry-content {
+		margin-top: 5.6em;
+	}
+	
+	.site-content, .site-header {
+	  padding: 0 6em;
+	}
+	
+	
 }
 
 @media screen and (min-width: 50em) { 

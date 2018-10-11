@@ -21,7 +21,7 @@ if ( function_exists('mem_date_processing') ) {
 
 if ($mem_date["start-iso"] !="" ) { 
 	
-	echo'<div>'.$mem_date["date-basic"].' '.$mem_date["date-year"].'</div>';
+	echo'<div class="date">'.$mem_date["date-basic"].' '.$mem_date["date-year"].'</div>';
 	
 }
 

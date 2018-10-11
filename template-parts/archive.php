@@ -38,6 +38,8 @@
 				
 			}
 			
+			// Check categories. In: ...
+			
 			// close title tag:
 			echo '</h2>';
 		
