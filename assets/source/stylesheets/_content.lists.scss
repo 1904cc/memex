@@ -12,7 +12,27 @@
 			
 /*			border:  1px dashed gray;			*/
 			display: grid;
-			grid-template-columns: auto 400px;
+			
+			grid-template-columns: repeat(2, 1fr);
+			grid-column-gap: 0;
+	}
+	
+	.grid .post {
+		background-color: #fff;
+		padding: 1em;
+	}
+	
+	.grid .post:nth-of-type(4n+3),
+	.grid .post:nth-of-type(4n+2) {
+		background-color: #eee;
+	}
+	
+	.grid .entry-title {
+		margin: 0;
+		padding: 1em 0;
+	}
+	.grid .post a {
+		padding: 1em;
 	}
 
 }
