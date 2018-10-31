@@ -6,33 +6,102 @@
 ## List - archive pages with list of content
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+## Grid
+
+The idea is: just by using .grid class, we get a visual grid.
+The expected content for the items in a grid:
+- .post as the main container.
+- .entry-title as the title.
+--------------------------------------------------------------*/
+
+/* 
+
+ Mobile Styles for grid items
+ 
+*/
+
+.grid {
+	margin: 0;
+	padding: 0;
+	/* Note: we reset padding, as the grid may be applied on UL or other styled items. */
+}
+
+.grid .post {
+	background-color: #fff;
+	padding: 0em;
+	list-style: none;
+}
+.grid .entry-title {
+	margin: 0;
+	padding: 0.5em 0.5em;
+}
+
+.grid .post:nth-of-type(2n+2) {
+	background-color: #eee;
+}
+
+
 @media screen and (min-width: $small-value) {
 	
 	.grid {
-			
-/*			border:  1px dashed gray;			*/
-			display: grid;
-			
-			grid-template-columns: repeat(2, 1fr);
-			grid-column-gap: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 0;
+		
 	}
-	
-	.grid .post {
+	/* reset grid colors */
+	.grid .post:nth-of-type(2n+2) {
 		background-color: #fff;
-		padding: 1em;
 	}
-	
+	/* grid colors */
 	.grid .post:nth-of-type(4n+3),
 	.grid .post:nth-of-type(4n+2) {
 		background-color: #eee;
 	}
-	
-	.grid .entry-title {
-		margin: 0;
-		padding: 1em 0;
-	}
-	.grid .post a {
+	.grid .post {
 		padding: 1em;
 	}
+	.grid .entry-title {
+		padding: 1em 0.5em;
+	}
+	.grid .post a {
+		padding: 0em;
+	}
 
+}
+
+@media screen and (min-width: $medium-value) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
+	/* reset colors */
+	.grid .post:nth-of-type(4n+3),
+	.grid .post:nth-of-type(4n+2) {
+		background-color: #fff;
+	}
+	
+	/* grid colors */
+	.grid .post:nth-of-type(4n+2),
+	.grid .post:nth-of-type(4n+4) {
+		background-color: #eee;
+	}
+}
+
+@media screen and (min-width: $large-value) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	/* reset colors */
+	.grid .post:nth-of-type(4n+2),
+	.grid .post:nth-of-type(4n+4) {
+		background-color: #fff;
+	}
+	/* grid colors */
+	.grid .post:nth-of-type(5n+2),
+	.grid .post:nth-of-type(5n+4) {
+		background-color: #eee;
+	}
+	
 }

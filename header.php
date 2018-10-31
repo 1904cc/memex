@@ -32,7 +32,7 @@
 		
 		?>
 		<header id="masthead" class="site-header">
-			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<h1 class="site-title site-title-frontpage"><?php bloginfo( 'name' ); ?></h1>
 		</header><!-- #masthead -->
 		<?php
 	
