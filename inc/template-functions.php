@@ -30,3 +30,37 @@ function memex_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'memex_pingback_header' );
+
+/**
+ * Output a list of items
+ * Input:
+ * - posts
+ * - a title
+ */
+ 
+function memex_item_list( $memex_item_list, $memex_list_name ) {
+	
+	if ( $memex_item_list->have_posts() ) : ?>
+	
+	<div class="bloc-item-list">
+	<h2><?php echo $memex_list_name; ?></h2>
+			<ul class="ul-horiz-img grid">
+				
+	<?php
+	while( $memex_item_list->have_posts() ) : $memex_item_list->the_post();  ?>
+				<li class="post">
+					<a href="<?php the_permalink(); ?>">
+						<h3 class="entry-title"><?php the_title(); ?></h3>
+					</a>
+				</li>
+	  <?php
+	  endwhile; 
+		?>
+	</ul>
+			
+	</div><!-- .bloc-operators -->
+	<?php
+	wp_reset_postdata();
+	endif; 
+	
+}
