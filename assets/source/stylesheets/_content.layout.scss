@@ -94,7 +94,7 @@
   .single .entry-content {
     width: 50%;
     float: right;
-		margin-top: 4.2em;
+		margin-top: 0;
   }
   
   .single .entry-header,
@@ -111,7 +111,8 @@
 	}
   
   .single .entry-content,
-  .single .entry-footer {
+  .single .entry-footer,
+  .content-list {
       margin-bottom: 2em;
   }
       
@@ -134,7 +135,7 @@
 	}
 	
 	.single .entry-content {
-		margin-top: 5.6em;
+		margin-top: 1.2em;
 	}
 	
 	.site-content, .site-header {
