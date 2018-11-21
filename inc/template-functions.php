@@ -51,6 +51,14 @@ function memex_item_list( $memex_item_list, $memex_list_name ) {
 				<li class="post">
 					<a href="<?php the_permalink(); ?>">
 						<h3 class="entry-title"><?php the_title(); ?></h3>
+						<?php 
+						
+//						echo memex_date( get_the_ID(), 
+//							' (', // opening tag
+//							')' // closing tag
+//						);
+						
+						 ?>
 					</a>
 				</li>
 	  <?php
@@ -62,5 +70,32 @@ function memex_item_list( $memex_item_list, $memex_list_name ) {
 	<?php
 	wp_reset_postdata();
 	endif; 
+	
+}
+
+/**
+ * Output the Event Date with one command.
+ * Input: 
+ * $id = Post ID
+ * $open = opening tag : '<div class="date">
+ * $close = closing tag : '</div>'
+ */
+
+function memex_date( $id, $open, $close ) {
+	
+	if ( function_exists('mem_date_processing') ) {
+				
+		$mem_date = mem_date_processing( 
+			get_post_meta($id, '_mem_start_date', true) , 
+			get_post_meta($id, '_mem_end_date', true)
+		);
+	
+	}
+		
+	if ($mem_date["start-iso"] !="" ) { 
+		
+		return $open . $mem_date["date-basic"].' '.$mem_date["date-year"]. $close;
+		
+	}
 	
 }

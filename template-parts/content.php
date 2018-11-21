@@ -21,12 +21,12 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
+						
+		echo memex_date( get_the_ID(), 
+			'<div class="date">', // opening tag
+			'</div>' // closing tag
+		);
 		
-		// Date
-		
-		get_template_part( 'template-parts/date', get_post_type() );
-		
-
 		?>
 	</header><!-- .entry-header -->
 
