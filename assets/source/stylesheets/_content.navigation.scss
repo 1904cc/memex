@@ -112,12 +112,12 @@
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
-/* 600px -> Switch to Desktop Menu */
+/* $small-value aka 600px -> Switch to Desktop Menu */
 
 @media screen and (min-width: $small-value) {
   
 	.main-navigation {
-		margin-top: 0; /**/
+		margin-top: 0;
 	}
   
   .main-navigation ul {
@@ -136,7 +136,6 @@
   }
 
   .main-navigation .menu-item {
-/*    padding: 0.5em 2em;*/
     flex-grow: 1;
     text-align: center;
   }
@@ -146,7 +145,6 @@
 .site-main .comment-navigation, 
 .site-main .posts-navigation, 
 .site-main .post-navigation {
-  margin: 0 0 1.5em;
   overflow: hidden;
   padding-top: 2em;
 }
@@ -155,17 +153,13 @@
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
-/*  width: 50%;*/
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-  /*float: right;
-  text-align: right;*/
   float: left;
   clear: left;
-/*  width: 50%;*/
 }
 
 /* @end */

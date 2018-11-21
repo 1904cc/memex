@@ -9,11 +9,16 @@
   padding: 0 2em;
 }
 
+.site-content {
+	padding-bottom: 2em;
+}
+
 @media screen and (min-width: $small-value) {
   
 	.site-header,
 	.site-content {
-	  padding: 0 4em;
+		padding-left: 4em;
+		padding-right: 4em;
 	}
 	
   /*
@@ -110,12 +115,6 @@
 		margin-top: 0;
 	}
   
-  .single .entry-content,
-  .single .entry-footer,
-  .content-list {
-      margin-bottom: 2em;
-  }
-      
   .post-navigation {
     clear: both;
   }
@@ -138,8 +137,14 @@
 		margin-top: 1.2em;
 	}
 	
-	.site-content, .site-header {
-	  padding: 0 6em;
+	.site-header,
+	.site-content {
+	  padding-left: 6em;
+		padding-right: 6em;
+	}
+	
+	.site-content {
+		padding-bottom: 4em;
 	}
 	
 	
