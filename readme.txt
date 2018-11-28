@@ -1,6 +1,6 @@
 === memex ===
 
-Contributors: automattic
+Contributors: ms-studio, automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called memex.
+A theme for archival documentation called memex. Based on the _underscores starter theme by automattic.
 
 == Description ==
 
