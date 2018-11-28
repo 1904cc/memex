@@ -36,6 +36,9 @@ add_action( 'wp_head', 'memex_pingback_header' );
  * Input:
  * - posts
  * - a title
+ *
+ * Note: output markup should be identical to : 
+ * template-parts/archive.php
  */
  
 function memex_item_list( $memex_item_list, $memex_list_name ) {
@@ -79,9 +82,10 @@ function memex_item_list( $memex_item_list, $memex_list_name ) {
  * $id = Post ID
  * $open = opening tag : '<div class="date">
  * $close = closing tag : '</div>'
+ * $link = true or false
  */
 
-function memex_date( $id, $open, $close ) {
+function memex_date( $id, $open, $close, $link ) {
 	
 	if ( function_exists('mem_date_processing') ) {
 				
@@ -93,8 +97,30 @@ function memex_date( $id, $open, $close ) {
 	}
 		
 	if ($mem_date["start-iso"] !="" ) { 
+	
+		$date = $open;
 		
-		return $open . $mem_date["date-basic"].' '.$mem_date["date-year"]. $close;
+		if ( $link == true ) {
+			$date .= '<a href="/'.$mem_date["date-year"].'/">';
+		}
+		
+		if (!empty($mem_date["date-basic"])) {
+		
+			$date .= $mem_date["date-basic"];
+		
+			$date .= ' ';
+		
+		}
+		
+		$date .= $mem_date["date-year"];
+		
+		if ( $link == true ) {
+			$date .= '</a>';
+		}
+		
+		$date .= $close;
+		
+		return $date;
 		
 	}
 	

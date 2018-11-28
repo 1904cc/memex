@@ -23,7 +23,8 @@
       echo memex_date( 
       	get_the_ID(), 
       	' (', 
-      	')' 
+      	')',
+      	false 
       );
 			
 			// Check categories. In: ...

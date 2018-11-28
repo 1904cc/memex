@@ -24,7 +24,8 @@
 						
 		echo memex_date( get_the_ID(), 
 			'<div class="date">', // opening tag
-			'</div>' // closing tag
+			'</div>', // closing tag,
+			true
 		);
 		
 		?>
