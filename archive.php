@@ -1,7 +1,9 @@
 <?php
 /**
  * The template for displaying archive pages
- * Example: archive by category, by date...
+ * Example: archive by category
+ *
+ * Note: date/year uses the date.php template
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,8 +14,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area content-list list-view">
 		<main id="main" class="site-main">
-			
-			
 
 				<?php
 				if ( have_posts() ) : ?>
