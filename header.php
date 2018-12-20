@@ -38,10 +38,14 @@
 	
 	} else {
 	
-	// Show only some navigation back to front page.
+	// Show some navigation back to front page.
+	// In some cases, this navigation will be contextual, may lead back to some 
+	// previous "global page", such as : Timeline, Artefacts, Operator.
+	
+	$memex_contextual_backlink = memex_contextual_backlink();
 	
 	?>
-	<nav class="site-title site-title-link h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<nav class="site-title site-title-link h1"><a href="<?php echo $memex_contextual_backlink; ?>" rel="home"><svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	    <title>Close</title>
 	    <desc>Close icon.</desc>
 	    <defs></defs>

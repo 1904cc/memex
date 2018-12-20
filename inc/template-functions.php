@@ -101,7 +101,7 @@ function memex_date( $id, $open, $close, $link ) {
 		$date = $open;
 		
 		if ( $link == true ) {
-			$date .= '<a href="/'.$mem_date["date-year"].'/">';
+			$date .= '<a href="'. esc_url( home_url( '/' )) . $mem_date["date-year"].'/">';
 		}
 		
 		if (!empty($mem_date["date-basic"])) {
@@ -124,4 +124,26 @@ function memex_date( $id, $open, $close, $link ) {
 		
 	}
 	
+}
+
+function memex_contextual_backlink() {
+	
+	// Retrieve COOKIE to check if a backlink is defined.
+	
+	// Else: default backlink:
+	
+	if ( !isset($_COOKIE["memexbacklink"]) ) {
+	  	  
+		$link = esc_url( home_url( '/' ));
+	  
+	} else {
+	  
+	  // echo "The cookie is set.";
+	  
+	  $link = $_COOKIE["memexbacklink"];
+	
+	}
+
+	return $link;
+
 }
