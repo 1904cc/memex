@@ -65,13 +65,21 @@ The expected content for the items in a grid:
 		background-color: #eee;
 	}
 	.grid .post {
-		padding: 1em;
+		padding: 0em;
 	}
 	.grid .entry-title {
 		padding: 1em 0.5em;
+		font-size: 1.5em;
+		display: block;
 	}
 	.grid .post a {
-		padding: 0em;
+		padding: 1em;
+		display: block;
+	}
+	
+	.grid .post a:hover {
+		background-color: $color__primary;
+		color: #fff;
 	}
 
 }

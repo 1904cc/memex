@@ -17,20 +17,26 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		
 		else :
-		
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
 			
-      echo memex_date( 
-      	get_the_ID(), 
-      	' (', 
-      	')',
-      	false 
-      );
+			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 			
-			// Check categories. In: ...
+				echo '<span class="entry-title">';
+				
+					the_title();
+					
+		      echo memex_date( 
+		      	get_the_ID(), 
+		      	' (', 
+		      	')',
+		      	false 
+		      );
+					
+					// Check categories. In: ...
+				
+				// close title tag:
+				echo '</span>';
 			
-			// close title tag:
-			echo '</h2>';
+			echo '</a>';
 		
 		endif;
 
