@@ -70,7 +70,7 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 	        echo '">'.$term->name.'</a></p>';
 	        
 	        // Other items in Category
-	        
+	        	        
 	        $categories_query = new WP_Query( array(
 	        	'posts_per_page' => 4, // was 5
 	        	'category_name' => $term->slug,
@@ -79,19 +79,12 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 	        	'orderby' => 'rand',
 	        	) ); 
 	        	
-	        	$text_box_intro = 'Autres projets de la catégorie';
-	        	$text_box_name = $categories_array[0]["name"];
-	        	$text_box_link = home_url("/categorie/").$categories_array[0]["slug"];
-	        	$text_box_type = 'categories';
-	        	
 	        	if ($categories_query->have_posts()) : 
 	        	
-	        		// include( TEMPLATEPATH . '/inc/default-box-title.php' );
 	        		echo '<h3>Other items in '.$term->name.'</h3>';
 	        	
 	        	while( $categories_query->have_posts() ) : $categories_query->the_post();
 	        
-	        		// include( TEMPLATEPATH . '/inc/default-box.php' );
 	        		echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 	        		
 	         endwhile; 
