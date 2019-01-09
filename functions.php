@@ -119,9 +119,7 @@ add_action( 'widgets_init', 'memex_widgets_init' );
 function memex_styles_and_scripts() {
 
 	wp_enqueue_style( 'memex-base', get_template_directory_uri().'/assets/build/stylesheets/style.css' );
-	
-	// wp_enqueue_style( 'breite-grotesk', get_template_directory_uri().'/fonts/breite-grotesk/webfont.css' );
-	
+		
 	wp_enqueue_style( 'aileron-font', get_template_directory_uri().'/fonts/aileron/webfont.css' );
 	
 	wp_enqueue_style( 'prop-courier-sans', get_template_directory_uri().'/fonts/prop-courier-sans/webfont.css' );
