@@ -31,7 +31,7 @@
 
 @font-face {
   font-family: 'aileron';
-  src: url('italic.woff') format('woff');
+  src: url('regular-italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
