@@ -31,9 +31,8 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php memex_post_thumbnail(); ?>
-
 	<div class="entry-content">
+		<?php memex_post_thumbnail(); ?>
 		<?php
 			the_content( sprintf(
 				wp_kses(
