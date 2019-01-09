@@ -8,7 +8,7 @@ How is the bottom padding applied in this theme?
 
 For layout reasons, on pages with little content, we want to keep the **navigation** block at the bottom of the screen. 
 
-We achieve this by giving 80% of height to the main content:
+We achieve this by giving **80% of height** to the **main content**:
 
 ```
 .site-content {
@@ -18,7 +18,7 @@ We achieve this by giving 80% of height to the main content:
 
 Code location: _content.layout.scss
 
-And to the footer navigation, the remaining 20%:
+And to the **footer navigation**, the remaining 20%:
 
 ```
 .main-navigation li {
@@ -29,6 +29,8 @@ And to the footer navigation, the remaining 20%:
 Code location: _content.navigation.scss
 
 The problem: if we keep **margin-bottom** on one of those items, it will push the navigation below the fold.
+
+Solution: 
 
 
 ### On the Post template
