@@ -129,11 +129,14 @@
   }
   
   .main-navigation li {
-    min-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+	
+	/*
+	Note: min-height (20vh) is defined in _content.layout.scss!
+	*/
 
   .main-navigation .menu-item {
     flex-grow: 1;

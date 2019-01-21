@@ -29,9 +29,23 @@
   .site-content {
     min-height: calc(80vh);
   }
-
+	
+	/*
+	Exception for the Front Page, because of title.
+	*/
+	.home .site-content {
+	  min-height: calc(80vh - 5.7em);
+	}
+	
+	/*
+	The 80vh work well together with the 20vh of bottom navigation!
+	*/
+	
+	.main-navigation li {
+	  min-height: 20vh;
+	}
+	
 }
-
 
 
 
