@@ -26,7 +26,7 @@
 
 	<?php 
 	
-	// The Header is displayed only on the front page
+	// This Header is displayed only on the front page
 	
 	if ( is_front_page() && is_home() ) {
 		
