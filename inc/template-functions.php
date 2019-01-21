@@ -51,7 +51,7 @@ function memex_item_list( $memex_item_list, $memex_list_name ) {
 				
 	<?php
 	while( $memex_item_list->have_posts() ) : $memex_item_list->the_post();  ?>
-				<li class="post">
+				<li class="post item">
 					<a href="<?php the_permalink(); ?>">
 						<h3 class="entry-title"><?php the_title(); ?></h3>
 						<?php 
