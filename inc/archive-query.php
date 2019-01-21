@@ -29,6 +29,7 @@ function memex_archive_query( $current_year ) {
 				
 				$no_date_query = new WP_Query( array( 
 							'posts_per_page' => -1,
+							'post_type' => 'any',
 							'post__not_in' => $exclude_id,
 							'year' => $current_year,
 							
@@ -53,6 +54,7 @@ function memex_archive_query( $current_year ) {
 					
 				$has_date_query = new WP_Query( array( 
 								'posts_per_page' => -1,
+								'post_type' => 'any',
 								'post__not_in' => $exclude_id,
 								'meta_query' => array(
 								    'relation' => 'AND',
