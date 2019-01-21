@@ -14,7 +14,9 @@ If no cookie is set, this function will produce a link to the sites frontpage.
 
 # How is the cookie set?
 
-A child theme can set the cookie, for instance in a specific page template (e.g. some sort of "overview page" or "index page").
+In the base Memex theme, the cookie is set when visiting a Category archive or Date archive.
+
+A child theme can set the cookie in specific page templates (e.g. some sort of "overview page" or "index page").
 
 The template can include this piece of code in the header: 
 
@@ -29,5 +31,5 @@ setcookie(
 
 This code will store the cookie for 24 hours.
 
-It can be overridden if another "overview page" sets the same cookie.
+It will be overridden if another "overview page" sets the same cookie.
 

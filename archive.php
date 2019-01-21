@@ -9,6 +9,11 @@
  *
  * @package memex
  */
+ 
+setcookie(
+ 	"memexbacklink", 
+ 	$_SERVER['REQUEST_URI'], 
+ 	time() + (86400), "/");
 
 get_header(); ?>
 
