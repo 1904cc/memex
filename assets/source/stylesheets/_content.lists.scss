@@ -32,7 +32,7 @@ The expected content for the items in a grid:
 	/* Note: we reset padding, as the grid may be applied on UL or other styled items. */
 }
 
-.grid .post {
+.grid .item {
 	background-color: #fff;
 	padding: 0em;
 	list-style: none;
@@ -42,7 +42,7 @@ The expected content for the items in a grid:
 	padding: 0.5em 0.5em;
 }
 
-.grid .post:nth-of-type(2n+2) {
+.grid .item:nth-of-type(2n+2) {
 	background-color: #eee;
 }
 
@@ -56,15 +56,15 @@ The expected content for the items in a grid:
 		
 	}
 	/* reset grid colors */
-	.grid .post:nth-of-type(2n+2) {
+	.grid .item:nth-of-type(2n+2) {
 		background-color: #fff;
 	}
 	/* grid colors */
-	.grid .post:nth-of-type(4n+3),
-	.grid .post:nth-of-type(4n+2) {
+	.grid .item:nth-of-type(4n+3),
+	.grid .item:nth-of-type(4n+2) {
 		background-color: #eee;
 	}
-	.grid .post {
+	.grid .item {
 		padding: 0em;
 	}
 	.grid .entry-title {
@@ -72,12 +72,12 @@ The expected content for the items in a grid:
 		font-size: 1.5em;
 		display: block;
 	}
-	.grid .post a {
+	.grid .item a {
 		padding: 1em;
 		display: block;
 	}
 	
-	.grid .post a:hover {
+	.grid .item a:hover {
 		background-color: $color__primary;
 		color: #fff;
 	}
@@ -90,14 +90,14 @@ The expected content for the items in a grid:
 	}
 	
 	/* reset colors */
-	.grid .post:nth-of-type(4n+3),
-	.grid .post:nth-of-type(4n+2) {
+	.grid .item:nth-of-type(4n+3),
+	.grid .item:nth-of-type(4n+2) {
 		background-color: #fff;
 	}
 	
 	/* grid colors */
-	.grid .post:nth-of-type(4n+2),
-	.grid .post:nth-of-type(4n+4) {
+	.grid .item:nth-of-type(4n+2),
+	.grid .item:nth-of-type(4n+4) {
 		background-color: #eee;
 	}
 }
@@ -107,13 +107,13 @@ The expected content for the items in a grid:
 		grid-template-columns: repeat(4, 1fr);
 	}
 	/* reset colors */
-	.grid .post:nth-of-type(4n+2),
-	.grid .post:nth-of-type(4n+4) {
+	.grid .item:nth-of-type(4n+2),
+	.grid .item:nth-of-type(4n+4) {
 		background-color: #fff;
 	}
 	/* grid colors */
-	.grid .post:nth-of-type(5n+2),
-	.grid .post:nth-of-type(5n+4) {
+	.grid .item:nth-of-type(5n+2),
+	.grid .item:nth-of-type(5n+4) {
 		background-color: #eee;
 	}
 	

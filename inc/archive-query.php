@@ -305,7 +305,7 @@ function memex_echo_news( $item, $context ) {
  					$item_header_class .= ' has-img';
  				}
 
- 				echo '<article class="news-item'.$item_header_class.'">';
+ 				echo '<article class="news-item item '.$item_header_class.'">';
  				
  					// Build URL
  					// Adresse web de WordPress (URL) = WordPress Address (URL) = get_site_url()
