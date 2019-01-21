@@ -14,9 +14,8 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php memex_post_thumbnail(); ?>
-
 	<div class="entry-content">
+		<?php memex_post_thumbnail(); ?>
 		<?php
 			the_content();
 
