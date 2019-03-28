@@ -6,6 +6,7 @@
  *
  * @package memex
  */
+ 
 
 ?>
 
@@ -23,14 +24,14 @@
 				echo '<span class="entry-title">';
 				
 					the_title();
-					
-		      echo memex_date( 
-		      	get_the_ID(), 
-		      	' (', 
-		      	')',
-		      	false 
-		      );
-					
+		
+			      echo memex_date( 
+			      	get_the_ID(), 
+			      	' (', 
+			      	')',
+			      	false 
+			      );
+			      					
 					// Check categories. In: ...
 				
 				// close title tag:

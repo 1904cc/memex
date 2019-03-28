@@ -160,7 +160,7 @@ function memex_cat_query( $category_id ) {
  */
 
 function memex_news_array_sort($a,$b) {
-  return $a['start-date-iso']<$b['start-date-iso'];
+  return $a['start-date-iso']>$b['start-date-iso'];
 }
 
 
@@ -313,12 +313,7 @@ function memex_echo_news( $item, $context ) {
  					// Adresse web de WordPress (URL) = WordPress Address (URL) = get_site_url()
  					// Adresse web du site (URL) = Site Address (URL) = get_home_url
  					
- 					// Note 1: $item["permalink"]; ne fonctionne pas bien pour les articles planifiés
- 					
- 					// Note 2: sur les sous pages (contexte: 'sub-page'), il faut prendre l'URL originale, 
- 					// car elle contient un sous-élément: 
- 					// p.ex. http://memexnet.ch/hors-cases/galerie-1-piece/
- 					// ou http://memexnet.ch/residences/residence-curatoriale/
+ 					// Note 1: $item["permalink"]; ne fonctionne pas bien pour les articles planifiés (date future)
  					
  					if ( $context == 'sub-page' ) {
  					
@@ -339,13 +334,19 @@ function memex_echo_news( $item, $context ) {
  				echo $item["title"];
  							 
  				echo '';
- 							 
- 						if ( $item["has-event"] == true ) {
- 							
-							echo ' ('. $item["date-num"] .')'; 
-										
- 						} // end testing for Pub-Date
  						
+					if ( $context != 'archive' ) {
+					
+						// Inutile d'afficher les dates sur les archives par année.
+						 
+						if ( $item["has-event"] == true ) {
+							
+						echo ' ('. $item["date-num"] .')'; 
+									
+						} // end testing for Pub-Date
+					
+					}
+					
  					?>
  						</a><!-- news-item-title -->
 					</h2>
