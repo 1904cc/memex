@@ -326,10 +326,10 @@ function memex_echo_news( $item, $context ) {
  					}
  					
  				echo '<header class="entry-header">';
+ 				 					
+ 				echo '<a class="news-item-link entry-header" href="'.$news_url.'">';
  				
  				echo '<h2 class="entry-title">';
- 					
- 				echo '<a class="news-item-link entry-header" href="'.$news_url.'">';
  							 
  				echo $item["title"];
  							 
@@ -348,8 +348,8 @@ function memex_echo_news( $item, $context ) {
 					}
 					
  					?>
- 						</a><!-- news-item-title -->
-					</h2>
+ 					</h2>
+ 					</a><!-- news-item-title -->
  				</header><!-- .entry-header -->
  			</article><!-- news-item -->
  

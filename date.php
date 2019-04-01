@@ -17,7 +17,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area content-list list-view">
 		<main id="main" class="site-main">
-			
+
 			<?php 
 			
 			$current_year = get_the_time('Y');
