@@ -13,12 +13,20 @@
 	padding-bottom: 2em;
 }
 
+/* Wider Screens */
+
 @media screen and (min-width: $small-value) {
   
 	.site-header,
 	.site-content {
 		padding-left: 4em;
 		padding-right: 4em;
+	}
+	
+	.single .site-header,
+	.single .site-content {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	
   /*
@@ -38,7 +46,7 @@
 	}
 	
 	/*
-	The 80vh work well together with the 20vh of bottom navigation!
+	The 80vh works well together with the 20vh of bottom navigation!
 	*/
 	
 	.main-navigation li {
@@ -47,6 +55,25 @@
 	
 }
 
+@media screen and (min-width: $medium-value) {
+	
+	.site-header,
+	.site-content {
+	  padding-left: 6em;
+		padding-right: 6em;
+	}
+	
+	.single .site-header,
+	.single .site-content {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.site-content {
+		padding-bottom: 4em;
+	}
+	
+}
 
 
 /* Header */
@@ -148,18 +175,7 @@
 	
 	.single .entry-content {
 		margin-top: 1.2em;
-	}
-	
-	.site-header,
-	.site-content {
-	  padding-left: 6em;
-		padding-right: 6em;
-	}
-	
-	.site-content {
-		padding-bottom: 4em;
-	}
-	
+	}	
 	
 }
 
@@ -171,7 +187,7 @@
   }
   .single .entry-content {
     width: 60%;
-    padding-right: 10%;
+    /*padding-right: 10%;*/
   }
 
 }

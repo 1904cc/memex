@@ -82,12 +82,14 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 	        	if ($categories_query->have_posts()) : 
 	        	
 	        		echo '<h3>Other items in '.$term->name.'</h3>';
+	        		echo '<ul class="footer-list">';
 	        	
 	        	while( $categories_query->have_posts() ) : $categories_query->the_post();
 	        
 	        		echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 	        		
 	         endwhile; 
+	         		echo '</ul>';
 	         endif;
 	         wp_reset_postdata();
 				        
@@ -95,17 +97,6 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 			
 			}
 			
-			if ( $categories_list ) {
-			
-				/* translators: 1: list of categories. */
-			// 	printf( '<span class="cat-links">' . esc_html__( 'Category: %1$s', 'memex' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-				
-				// Other posts in same category?
-				// Q: how many do we want to query?
-				// 
-				
-			}
-
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'memex' ) );
 			if ( $tags_list ) {

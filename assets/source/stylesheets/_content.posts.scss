@@ -30,9 +30,19 @@
   
 }
 
-.entry-content p {
-  max-width: 33em;
+.entry-content p,
+.entry-content li {
+  max-width: 80%;
 }
+
+@media screen and (min-width: $large-value) {
+	.entry-content p,
+	.entry-content li {
+	  max-width: 33em;
+	}
+}
+
+
 
 .page-links {
   clear: both;
@@ -40,8 +50,63 @@
 }
 
 /*--------------------------------------------------------------
+## Paragraphs
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Bullet Lists
+--------------------------------------------------------------*/
+
+.single .entry-content ul {
+	background-color: #fff;
+	padding: 1em 0 1em 2em;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.entry-content ul.wp-block-gallery {
+	padding: 0;
+}
+
+.blocks-gallery-item img,
+.wp-block-gallery img {
+	cursor: zoom-in;
+}
+
+/*--------------------------------------------------------------
+## Blockquotes
+--------------------------------------------------------------*/
+
+.entry-content blockquote {
+	background-color: #fff;
+	background-color:  #7165c0;
+	color: #fff;
+	margin: 0;
+	padding: 1em 1.5em;
+}
+
+.entry-content blockquote a {
+	color: #fff;
+}
+
+.entry-content blockquote p:last-of-type {
+	margin-bottom: 1em;
+}
+
+
+
+/*--------------------------------------------------------------
 ## Featured Image
 --------------------------------------------------------------*/
+
+.post-thumbnail img {
+	max-height: 90vh;
+	max-height: calc(100vh - 3.6em);
+	object-fit: contain;
+	object-position: top left;
+}
 
 /* in large screen mode, ad some margin on top */
 @media screen and (min-width: $medium-value) {

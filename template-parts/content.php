@@ -57,6 +57,8 @@
 	<footer class="entry-footer">
 		<?php 
 		
+		// Show related things
+		
 		get_template_part( 'template-parts/related', get_post_type() );
 		
 		?>

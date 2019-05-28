@@ -2,6 +2,8 @@
 /**
  * Template part for related posts
  
+ * Will display categories and related items
+ 
  * Used in:
  * - single.php
  *
