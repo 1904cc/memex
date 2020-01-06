@@ -167,7 +167,10 @@
 # Other Items Navigation
 --------------------------------------------------------------*/
 
-.footer-list {
-	display: flex;
-	flex-direction: column;
+@media screen and (min-width: $small-value) {
+	.footer-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
 }

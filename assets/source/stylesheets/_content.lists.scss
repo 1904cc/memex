@@ -37,9 +37,22 @@ The expected content for the items in a grid:
 	padding: 0em;
 	list-style: none;
 }
+
+
+.grid .news-item-link {
+	text-decoration: none;
+}
+
 .grid .entry-title {
 	margin: 0;
-	padding: 0;
+	padding: 0.5em;
+	line-height: 1;
+}
+
+.grid .event-date {
+	font-size: 0.8em;
+	display: block;
+	margin-top: 0.2em;
 }
 
 .grid .item:nth-of-type(2n+2) {
@@ -77,6 +90,7 @@ The expected content for the items in a grid:
 	}
 	.grid .entry-title {
 		font-size: 1.5em;
+		padding: 0;
 		display: block;
 	}
 	
