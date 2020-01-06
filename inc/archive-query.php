@@ -216,10 +216,14 @@ function memex_create_news() {
 	 	
 	 // DATE
 	
-	 $mem_date = mem_date_processing( 
-	 	get_post_meta($current_post_id, '_mem_start_date', true) , 
-	 	get_post_meta($current_post_id, '_mem_end_date', true)
-	 );
+	if ( function_exists('mem_date_processing') ) {
+	
+		$mem_date = mem_date_processing( 
+			get_post_meta($current_post_id, '_mem_start_date', true) , 
+			get_post_meta($current_post_id, '_mem_end_date', true)
+		);
+	
+	}
 	 
 	 /*
 	  * Prepare date values.
