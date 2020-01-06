@@ -81,7 +81,7 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 	        	
 	        	if ($categories_query->have_posts()) : 
 	        	
-	        		echo '<h3>Other items in '.$term->name.'</h3>';
+	        		echo '<h3>Other '.$term->name.'</h3>';
 	        		echo '<ul class="footer-list">';
 	        	
 	        	while( $categories_query->have_posts() ) : $categories_query->the_post();

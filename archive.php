@@ -47,7 +47,13 @@ get_header(); ?>
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
 						 
-						get_template_part( 'template-parts/archive', get_post_format() );
+//						Formerly: get_template_part( 'template-parts/archive', get_post_format() );
+							// Note: avec cette méthode, les articles ne sont pas triés par date.
+							// Si on veut le tri par date, utiliser 
+							
+							// $news_array = memex_cat_query( $category_id );.
+							$item = memex_create_news();
+							echo memex_echo_news( $item, 'archive' );
 		
 					endwhile;
 					

@@ -40,7 +40,10 @@ get_header(); ?>
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 */
-				get_template_part( 'template-parts/archive', get_post_format() );
+//				get_template_part( 'template-parts/archive', get_post_format() );
+				
+				$item = memex_create_news();
+				echo memex_echo_news( $item, 'archive' );
 
 			endwhile;
 			

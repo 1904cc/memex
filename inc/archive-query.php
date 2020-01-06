@@ -104,8 +104,8 @@ function memex_archive_query( $current_year ) {
  * memex_cat_query
  *********************
  *
- * Permet de construire une archive par catégorie (en pied de page).
- * La catégorie est sélectionnée via un champ ACF.
+ * Permet de construire une archive par catégorie.
+ * La catégorie est sélectionné via un champ ACF.
  *
  * Le résultat sera généré avec memex_echo_news()
  *
@@ -122,6 +122,7 @@ function memex_cat_query( $category_id ) {
 		if ( false === ( $news_array = get_transient( 'memex_cat_'.$category_id ) ) ) {
 		
 				$exclude_id = array();
+				$news_array = array();
 				
 				$no_date_query = new WP_Query( array( 
 							'posts_per_page' => -1,
@@ -143,7 +144,7 @@ function memex_cat_query( $category_id ) {
 							usort($news_array, "memex_news_array_sort");
 					}	
 					
-					set_transient( 'memex_cat_'.$category_id , $news_array, 6 * HOUR_IN_SECONDS  ); 
+					 set_transient( 'memex_cat_'.$category_id , $news_array, 6 * HOUR_IN_SECONDS  ); 
 					// * HOUR_IN_SECONDS
 			
 			} // end of get_transient test
@@ -160,7 +161,7 @@ function memex_cat_query( $category_id ) {
  */
 
 function memex_news_array_sort($a,$b) {
-  return $a['start-date-iso']>$b['start-date-iso'];
+   return $a['start-date-iso']>$b['start-date-iso'];
 }
 
 
@@ -203,7 +204,7 @@ function memex_create_news() {
 	 	 			__( 'Continue reading %s', 'twentyfifteen' ),
 	 	 			the_title( '<span class="screen-reader-text">', '</span>', false )
 	 	 		) 
-	 	 	) // get_the_content
+	 	 	)
 	 	 );
 	 
 	 // Remove hyperlinks, to avoid nested hyperlinks.
@@ -232,66 +233,70 @@ function memex_create_news() {
 	 
 	 if ($mem_date["start-iso"] !="" ) { 
 	 
-	 			// case 1: use MEM date
-	 			
-	 					// $date_start_raw = get_post_meta($current_post_id, '_mem_start_date', true);
-	 				
-	 					$date_string = $mem_date["date"];
-	 					$date_short = $mem_date["date-short"];
-	 					$date_num = $mem_date["date-num"];
-	 					$date_year = $mem_date["start-year"];
-	 					
-	 					$start_date_iso = $mem_date["start-iso"];  // 2013-03-11T06:35
-	 					$end_date_iso = $mem_date["end-iso"];
-	 					$unix_start = $mem_date["start-unix"];
-	 					$unix_end = $mem_date["end-unix"];
-	 					$has_event_date = true;
+ 			// case 1: use MEM date
+	
+			// $date_start_raw = get_post_meta($current_post_id, '_mem_start_date', true);
+		
+			$date_string = $mem_date["date"];
+			$date_short = $mem_date["date-short"];
+			$date_num = $mem_date["date-num"];
+			$date_year = $mem_date["start-year"];
+			
+			$start_date_iso = $mem_date["start-iso"];  // 2013-03-11T06:35
+			$end_date_iso = $mem_date["end-iso"];
+			$unix_start = $mem_date["start-unix"];
+			$unix_end = $mem_date["end-unix"];
+			$has_event_date = true;
 	 			 
 	   } else {
 	   
-	   	// case 2: no MEM date defined - use POST DATE as START DATE
+	   	// case 2: no MEM date defined - use POST DATE
 	   				
-	   				$date_string = get_the_date( 'l j F Y' ); // Mercredi 5 juin 2013
-	   				$date_short = get_the_date( 'F Y' );
-	   				$date_num = get_the_date( 'd.m.Y' );
-	   				$date_year = get_the_date( 'Y' );
-	   				
-	   				$start_date_iso = get_the_date( 'Y-m-d\TH:i' );  // 2013-03-11T06:35
-	   				$end_date_iso = $start_date_iso;
-	   				$unix_start = strtotime( $start_date_iso );
-	   				$unix_end = $unix_start;
-	   				$has_event_date = false;
+			$date_string = get_the_date( 'l j F Y' ); // Mercredi 5 juin 2013
+			$date_short = get_the_date( 'F Y' );
+			$date_num = get_the_date( 'd.m.Y' );
+			$date_year = get_the_date( 'Y' );
+			
+			$start_date_iso = get_the_date( 'Y-m-d\TH:i' );  // 2013-03-11T06:35
+			$end_date_iso = $start_date_iso;
+			$unix_start = strtotime( $start_date_iso );
+			$unix_end = $unix_start;
+			$has_event_date = false;
 	   				
 	   }
 	 
 	 $archive_array = array( 
-	     	"id" => $current_post_id,
-	     	"class" => get_post_class( '', $current_post_id ),
-	     	"permalink" => get_permalink(), // NOTE: may return in form of /?p=191
-	     	"slug" => get_post_field( 'post_name', $current_post_id ),
-	     	"title" => get_the_title(),
-	     	"content" => $memex_content,
-	     	
-	     	// IMAGES
-	     	"url-custom" => $img_url_custom,
-	     	"url-large" => $img_url_large,
-	     	
-	     	// DATES
-	     	"date-string" => $date_string,
-	     	"date-short" => $date_short,
-	     	"date-num" => $date_num,
-	     	"date-year" => $date_year,
-	     	"date-pub" => get_the_date( 'l j F Y' ),
-	     	"start-date-iso" => $start_date_iso,
-	     	"end-date-iso" => $end_date_iso,
-	     	"start-date-unix" => $unix_start,
-	     	"end-date-unix" => $unix_end,
-	     	"has-event" => $has_event_date,
-	     
-	     	 // DEBUG
-	     	 // "date-start-raw" => $date_start_raw,
+     	"id" => $current_post_id,
+     	"class" => get_post_class( '', $current_post_id ),
+     	"permalink" => get_permalink(), // NOTE: may return in form of /?p=191
+     	"slug" => get_post_field( 'post_name', $current_post_id ),
+     	"title" => get_the_title(),
+     	"content" => $memex_content,
+     	
+     	// IMAGES
+     	"url-custom" => $img_url_custom,
+     	"url-large" => $img_url_large,
+     	
+     	// DATES
+     	"date-string" => $date_string,
+     	"date-short" => $date_short,
+     	"date-num" => $date_num,
+     	"date-year" => $date_year,
+     	"date-pub" => get_the_date( 'l j F Y' ),
+     	"start-date-iso" => $start_date_iso,
+     	"end-date-iso" => $end_date_iso,
+     	"start-date-unix" => $unix_start,
+     	"end-date-unix" => $unix_end,
+     	"has-event" => $has_event_date,
+     
+     	 // DEBUG
+     	 // "date-start-raw" => $date_start_raw,
 	     	
 	  );
+	  
+//	  echo '<pre>';
+//	  var_dump($archive_array);
+//	  echo '</pre>';
 	  
 	  return $archive_array;
 	  
@@ -312,12 +317,8 @@ function memex_echo_news( $item, $context ) {
  				}
 
  				echo '<article class="news-item item '.$item_header_class.'">';
- 				
- 					// Build URL
- 					// Adresse web de WordPress (URL) = WordPress Address (URL) = get_site_url()
- 					// Adresse web du site (URL) = Site Address (URL) = get_home_url
  					
- 					// Note 1: $item["permalink"]; ne fonctionne pas bien pour les articles planifiés (date future)
+ 					// Note: $item["permalink"]; ne fonctionne pas bien pour les articles planifiés (date future)
  					
  					if ( $context == 'sub-page' ) {
  					
@@ -339,17 +340,19 @@ function memex_echo_news( $item, $context ) {
  							 
  				echo '';
  						
-					if ( $context != 'archive' ) {
+//					if ( $context != 'archive' ) {
 					
-						// Inutile d'afficher les dates sur les archives par année.
+						// Inutile d'afficher les dates sur les archives par année? En fait, si! C'est seulement inutile si on n'a que l'année!
 						 
 						if ( $item["has-event"] == true ) {
-							
-						echo ' ('. $item["date-num"] .')'; 
+						
+						echo '<span class="event-date">';
+						echo $item["date-num"]; 
+						echo '</span>';
 									
 						} // end testing for Pub-Date
 					
-					}
+//					}
 					
  					?>
  					</h2>
