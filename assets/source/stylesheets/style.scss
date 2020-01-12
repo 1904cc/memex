@@ -54,7 +54,10 @@
 --------------------------------------------------------------*/
 
 @import "content.navigation";
-@import "content.layout";
+@import "content.layout.basics";
+@import "content.layout.postgrid";
+
+//   ## Details
 @import "content.posts";
 @import "content.lists";
 

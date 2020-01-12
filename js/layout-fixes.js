@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		Test if HeaderHeight is smaller than WindowHeight minus MenuHeight:
 		If yes, make it's position fixed.
 	 */
+	 
 	 if ( document.documentElement.clientWidth >= 600 ) {
 	 
 		 var windowHeight = window.innerHeight;
@@ -26,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		 		 	
 		 	var entryFooterTop = entryHeader.clientHeight;
 		 	
-		 	entryHeader.style.position = "fixed";
-		 	entryHeader.style.top = "0px";
-		 	entryHeader.style.width = entryHeaderW+"px";
-		 	
-		 	entryFooter.style.position = "fixed";
-		 	entryFooter.style.top = entryFooterTop+"px";
-		 	entryFooter.style.width = entryHeaderW+"px";
+//		 	entryHeader.style.position = "fixed";
+//		 	entryHeader.style.top = "0px";
+//		 	entryHeader.style.width = entryHeaderW+"px";
+//		 	
+//		 	entryFooter.style.position = "fixed";
+//		 	entryFooter.style.top = entryFooterTop+"px";
+//		 	entryFooter.style.width = entryHeaderW+"px";
 		 	
 		 }
 	 
