@@ -13,6 +13,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
+	
+	<?php 
+	if ( is_singular() ) {
+		memex_show_backlink();
+	}
+	 ?>
+	
 	<header class="entry-header">
 		<?php
 		

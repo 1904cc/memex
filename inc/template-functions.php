@@ -147,3 +147,24 @@ function memex_contextual_backlink() {
 	return $link;
 
 }
+
+function memex_show_backlink() {
+	
+	$memex_contextual_backlink = memex_contextual_backlink();
+	
+	?>
+	<nav class="site-title site-title-link h1"><a href="<?php echo $memex_contextual_backlink; ?>" rel="home"><svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <title>Close</title>
+	    <desc>Close icon.</desc>
+	    <defs></defs>
+	    <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+	        <g id="Group" transform="translate(6.000000, 6.000000)" stroke="#000000" stroke-width="2">
+	            <path d="M0.5,0.5 L19.0607112,19.0607112" id="Line"></path>
+	            <path d="M0,19.5607112 L18.5607112,1" id="Line-Copy"></path>
+	        </g>
+	    </g>
+	</svg></a></nav>
+	<?php
+	
+
+}
