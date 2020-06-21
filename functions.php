@@ -118,7 +118,14 @@ add_action( 'widgets_init', 'memex_widgets_init' );
  */
 function memex_styles_and_scripts() {
 
-	wp_enqueue_style( 'memex-base', get_template_directory_uri().'/assets/build/stylesheets/style.css' );
+	$my_theme = wp_get_theme('memex');
+	
+	wp_enqueue_style( 
+	'memex-base', 
+	get_template_directory_uri().'/assets/build/stylesheets/style.css',
+	array(),
+	$my_theme->get('Version')
+	 );
 		
 	wp_enqueue_style( 'aileron-font', get_template_directory_uri().'/fonts/aileron/webfont.css' );
 	
