@@ -65,9 +65,9 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 			
 				foreach ( $terms as $term ) {
 				
-	        echo '<p>Category: <a href="';
+	        echo '<h3>'.__( 'Category' ).': <a href="';
 	        echo esc_url( get_term_link( $term->slug, 'category' ) );
-	        echo '">'.$term->name.'</a></p>';
+	        echo '">'.$term->name.'</a></h3>';
 	        
 	        // Other items in Category
 	        	        
@@ -81,7 +81,7 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 	        	
 	        	if ($categories_query->have_posts()) : 
 	        	
-	        		echo '<h3>Other '.$term->name.'</h3>';
+	        		// echo '<h3>'.$term->name.'</h3>';
 	        		echo '<ul class="footer-list">';
 	        	
 	        	while( $categories_query->have_posts() ) : $categories_query->the_post();
@@ -101,7 +101,11 @@ if ( ! function_exists( 'memex_entry_footer' ) ) :
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'memex' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Keyword: %1$s', 'memex' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				echo '<span class="tags-links">';
+				echo __( 'Tag' ).': ';
+				echo $tags_list;
+				echo '</span>';
+				// printf( '<span class="tags-links">' . esc_html__( 'Keyword: %1$s', 'memex' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 			
 		// }
