@@ -2,14 +2,14 @@
 # Colors
 --------------------------------------------------------------*/
 
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
+$color__background-body: #e8e8e8;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-ins: #fff9c0;
 
 $color__primary: #7165C0; /* Violet */
 $color__contrast: #35E1C7; /* Green */
+$color__grey: #f9f9f9; /* Grey */
 
 $color__text-screen: #21759b;
 
@@ -71,4 +71,5 @@ $small-value:                   37.5em; // 600px
 $medium-value:                  48em; // 768px
 $large-value:                   62em; // 992px
 $extra-large-value:             80em; // 1280px
+$ultra-large-value:             105em; // 1680px
 

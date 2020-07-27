@@ -56,7 +56,7 @@ The expected content for the items in a grid:
 }
 
 .grid .item:nth-of-type(2n+2) {
-	background-color: #eee;
+	background-color: $color__grey;
 }
 
 
@@ -75,7 +75,7 @@ The expected content for the items in a grid:
 	/* grid colors */
 	.grid .item:nth-of-type(4n+3),
 	.grid .item:nth-of-type(4n+2) {
-		background-color: #eee;
+		background-color: $color__grey;
 	}
 	.grid .item {
 		padding: 0em;
@@ -115,7 +115,7 @@ The expected content for the items in a grid:
 	/* grid colors */
 	.grid .item:nth-of-type(4n+2),
 	.grid .item:nth-of-type(4n+4) {
-		background-color: #eee;
+		background-color: $color__grey;
 	}
 }
 
@@ -128,10 +128,59 @@ The expected content for the items in a grid:
 	.grid .item:nth-of-type(4n+4) {
 		background-color: #fff;
 	}
-	/* grid colors */
-	.grid .item:nth-of-type(5n+2),
-	.grid .item:nth-of-type(5n+4) {
-		background-color: #eee;
+	/* grid colors
+	 * every instance of: 
+	 2, 4, 
+	 5, 7 (+8)
+	 */
+	.grid .item:nth-of-type(8n+2),
+	.grid .item:nth-of-type(8n+4),
+	.grid .item:nth-of-type(8n+5),
+	.grid .item:nth-of-type(8n+7) {
+		background-color: $color__grey;
 	}
 	
 }
+
+@media screen and (min-width: $extra-large-value) {
+	.grid {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	/* reset colors */
+	.grid .item:nth-of-type(8n+2),
+	.grid .item:nth-of-type(8n+4),
+	.grid .item:nth-of-type(8n+5),
+	.grid .item:nth-of-type(8n+7) {
+		background-color: #fff;
+	}
+	/* grid colors */
+	.grid .item:nth-of-type(2n+2) {
+		background-color: $color__grey;
+	}
+	
+}
+
+@media screen and (min-width: $ultra-large-value) {
+	.grid {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	/* reset colors */
+	.grid .item:nth-of-type(2n+2) {
+		background-color: #fff;
+	}
+	/* grid colors
+	 * every instance of: 
+	 2, 4, 6,
+	 7, 9, 11
+	 */
+	.grid .item:nth-of-type(12n+2),
+	.grid .item:nth-of-type(12n+4),
+	.grid .item:nth-of-type(12n+6),
+	.grid .item:nth-of-type(12n+7),
+	.grid .item:nth-of-type(12n+9),
+	.grid .item:nth-of-type(12n+11)  {
+		background-color: $color__grey;
+	}
+	
+}
+

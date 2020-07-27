@@ -54,7 +54,8 @@
 
 .single .entry-content ul {
 	background-color: #fff;
-	padding: 1em 0 1em 2em;
+	padding: 1em 1em 1em 2em;
+	margin-right: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -80,10 +81,15 @@
 /*	color: #fff;*/
 	margin: 0;
 	padding: 1em 1.5em;
+	margin-right: 1em;
 }
 
 .entry-content blockquote a {
 	/*color: #fff;*/
+}
+
+.entry-content blockquote p:first-of-type {
+	margin-top: 0;
 }
 
 .entry-content blockquote p:last-of-type {
