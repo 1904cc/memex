@@ -52,8 +52,10 @@ get_header(); ?>
 			</div><!-- #grid -->
 			
 			<?php
-
+			
 			the_posts_navigation();
+			
+			get_search_form();
 
 		else :
 

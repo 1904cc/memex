@@ -68,6 +68,8 @@
 		
 		get_template_part( 'template-parts/related', get_post_type() );
 		
+		get_search_form();
+		
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
