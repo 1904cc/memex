@@ -126,3 +126,14 @@
 .bypostauthor {
   display: block;
 }
+
+/*--------------------------------------------------------------
+## Post Metadata
+--------------------------------------------------------------*/
+.footer-list {
+	list-style: none;
+}
+
+.footer-list li::before {
+	content: "• ";
+}
