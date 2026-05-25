@@ -136,4 +136,7 @@
 
 .footer-list li::before {
 	content: "• ";
+	font-size: 130%;
+  vertical-align: middle;
+  line-height: 1;
 }
