@@ -1,41 +1,25 @@
-// Requiring Gulp
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),                 // Requiring gulp-sass (compiles SCSS)
-    sourcemaps = require('gulp-sourcemaps'),     // Requiring sourcemaps (helps working locally)
-    autoprefixer = require('gulp-autoprefixer'), // Requiring autoprefixer (adds browser prefixes)
-    cssnano = require('gulp-cssnano'),           // Requiring cssnano (minifies CSS)
-    imagemin = require('gulp-imagemin'),         // Requiring imagemin (lossless image optimization)
-    shell = require('gulp-shell'),               // Requiring gulp-shell (used for KSS node)
-    kssNode = 'node ' + __dirname + '/node_modules/kss/bin/kss-node '; // Require kss-node
+    sass = require('gulp-sass')(require('sass')),
+    sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano');
 
-
-
-// Start stylesheets task
-gulp.task('stylesheets', function() {
-  gulp.src('assets/source/stylesheets/*.scss') // Get all *.scss files
-    .pipe(sourcemaps.init()) // Initialize sourcemap plugin
-    .pipe(sass().on('error', sass.logError)) // Compiling sass
-    .pipe(autoprefixer('last 2 version')) // Adding browser prefixes
-    .pipe(sourcemaps.write()) // Writing sourcemaps
-    .pipe(cssnano()) // Compress
-    .pipe(gulp.dest('assets/build/stylesheets'))
+gulp.task('stylesheets', function(done) {
+  gulp.src('assets/source/stylesheets/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
+    .pipe(sourcemaps.write())
+    .pipe(cssnano())
+    .pipe(gulp.dest('assets/build/stylesheets'));
+  done();
 });
 
-
-
-// Start build task
-// gulp.task('build', ['stylesheets'], function() {});
-gulp.task('build', gulp.series('stylesheets', function() { 
-    // default task code here
-    done();
+gulp.task('build', gulp.series('stylesheets', function(done) {
+  done();
 }));
 
-// Start watch groups of tasks
-// gulp.task('default', ['stylesheets'], function() {
-gulp.task('default', gulp.series('stylesheets', function() { 
-  gulp.watch('assets/source/stylesheets/*.scss', ['stylesheets']); // Watch for SCSS changes
-  // gulp.watch('source/assets/scripts/**/*.js', ['scripts']); // Watch for JS changes
-  // gulp.watch('build/**.html', browserSync.reload);
-  // gulp.watch('styleguide/**.html', browserSync.reload);
+gulp.task('default', gulp.series('stylesheets', function(done) {
+  gulp.watch('assets/source/stylesheets/*.scss', gulp.series('stylesheets'));
   done();
 }));
